@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { StyleSheet, FlatList, Text, View } from 'react-native'
+import { StyleSheet, FlatList, Text, View, Image } from 'react-native'
 import Header from '../Header';
 
 const data = [1, 2, 3, 4, 5];
@@ -19,6 +19,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={{ uri: 'https://static.lemonilo.com/dynamic-pages/wiranilo/Desktop-1-Banner-Header.jpg?tr=w-800,q-75 '}}
+        style={{ width: 500, height: 500 }}
+      />
+      
       <Header />
       <Text accessibilityRole="header" style={styles.text}>
         React Native for Web & Next.js
