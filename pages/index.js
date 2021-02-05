@@ -20,7 +20,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: 'https://static.lemonilo.com/dynamic-pages/wiranilo/Desktop-1-Banner-Header.jpg?tr=w-800,q-75 '}}
+        source={{ uri: 'https://ik.imagekit.io/10tn5i0v1n/dynamic-pages/wiranilo/Desktop-1-Banner-Header.jpg?tr=w-800,q-75 '}}
         style={{ width: 500, height: 500 }}
       />
       
