@@ -1,6 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, FlatList, Text, View } from 'react-native'
+
+const data = [1, 2, 3, 4, 5];
 
 export default function Alternate() {
+  const keyExtractor = useCallback((item) => {
+    return `${item}`;
+  }, [])
+
+  const renderItem = useCallback(({ item }) => {
+    return (
+      <div>
+        {item}
+      </div>
+    )
+  }, []);
+
+
   return (
     <View style={styles.container}>
       <Text accessibilityRole="header" style={styles.text}>
@@ -10,6 +25,12 @@ export default function Alternate() {
       <Text style={styles.link} accessibilityRole="link" href={`/`}>
         Go Back
       </Text>
+
+      <FlatList
+        data={data}
+        keyExtractor={keyExtractor}
+        renderItem={renderItem}
+      />
     </View>
   )
 }
