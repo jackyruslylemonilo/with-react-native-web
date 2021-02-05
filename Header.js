@@ -1,10 +1,9 @@
 import { useCallback } from 'react';
 import { StyleSheet, FlatList, Text, View } from 'react-native'
-import Header from '../Header';
 
 const data = [1, 2, 3, 4, 5];
 
-export default function Alternate() {
+export default function App() {
   const keyExtractor = useCallback((item) => {
     return `${item}`;
   }, [])
@@ -17,17 +16,13 @@ export default function Alternate() {
     )
   }, []);
 
-
   return (
     <View style={styles.container}>
-      <Header />
-      <Text accessibilityRole="header" style={styles.text}>
-        Alternate Page
-      </Text>
-
-      <Text style={styles.link} accessibilityRole="link" href={`/`}>
-        Go Back
-      </Text>
+      <View style={styles.textContainer}>
+        <Text accessibilityRole="header" aria-level="2" style={styles.text}>
+          Header
+        </Text>
+      </View>
 
       <FlatList
         data={data}
@@ -44,12 +39,16 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
   },
+  link: {
+    color: 'blue',
+  },
+  textContainer: {
+    alignItems: 'center',
+    marginTop: 16,
+  },
   text: {
     alignItems: 'center',
     fontSize: 24,
     marginBottom: 24,
-  },
-  link: {
-    color: 'blue',
   },
 })

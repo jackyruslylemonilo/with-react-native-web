@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { StyleSheet, FlatList, Text, View } from 'react-native'
+import Header from '../Header';
 
 const data = [1, 2, 3, 4, 5];
 
@@ -18,6 +19,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Header />
       <Text accessibilityRole="header" style={styles.text}>
         React Native for Web & Next.js
       </Text>
