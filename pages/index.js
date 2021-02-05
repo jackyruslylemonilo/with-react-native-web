@@ -8,7 +8,7 @@ export default function App() {
     return `${item}`;
   }, [])
 
-  const renderItem = useCallback((item) => {
+  const renderItem = useCallback(({ item }) => {
     return (
       <div>
         {item}
