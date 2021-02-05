@@ -1,6 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { useCallback } from 'react';
+import { StyleSheet, FlatList, Text, View } from 'react-native'
 
-export default function App(props) {
+const data = [1, 2, 3, 4, 5];
+
+export default function App() {
+  const keyExtractor = useCallback((item) => {
+    return `${item}`;
+  }, [])
+
+  const renderItem = useCallback((item) => {
+    return (
+      <div>
+        {item}
+      </div>
+    )
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text accessibilityRole="header" style={styles.text}>
@@ -16,6 +31,12 @@ export default function App(props) {
           Subheader
         </Text>
       </View>
+
+      <FlatList
+        data={data}
+        keyExtractor={keyExtractor}
+        renderItem={renderItem}
+      />
     </View>
   )
 }
