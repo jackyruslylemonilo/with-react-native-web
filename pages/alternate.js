@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { StyleSheet, FlatList, Text, View } from 'react-native'
 
 const data = [1, 2, 3, 4, 5];
