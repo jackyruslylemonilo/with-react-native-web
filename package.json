@@ -1,18 +1,21 @@
 {
   "name": "with-react-native-web",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 4000",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "^10.0.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-native-web": "^0.14.12"
+    "next": "^11.0.1",
+    "next-transpile-modules": "6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native-web": "^0.17.1",
+    "react-native-web-swiper": "^2.2.1",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
-    "babel-plugin-react-native-web": "^0.14.12"
+    "babel-plugin-react-native-web": "^0.17.1"
   },
   "license": "MIT"
 }
