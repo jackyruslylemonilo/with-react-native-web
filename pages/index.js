@@ -39,6 +39,8 @@ export default function App() {
         style={{ width: 500, height: 500 }}
       /> */}
 
+      <a href="https://lemonilo.app.link/back-to-landing-page">Back App</a>
+
       <Link href="/alternate">
         <button onClick={() => console.log('Clicked 1')}>
           <button onClick={(e) => {
