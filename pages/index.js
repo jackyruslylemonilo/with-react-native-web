@@ -39,7 +39,7 @@ export default function App() {
         style={{ width: 500, height: 500 }}
       /> */}
 
-      <a href="https://lemonilo.app.link/back-to-landing-page">Back App</a>
+      <a href="https://lemonilo.test-app.link/exit-to-app">Back App</a>
 
       <Link href="/alternate">
         <button onClick={() => console.log('Clicked 1')}>
