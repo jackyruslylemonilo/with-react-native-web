@@ -39,7 +39,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (_platform === 'ios') {
-          return window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
+          return window.open('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
         }
 
         if (currentVersion < minVersionApp) {
