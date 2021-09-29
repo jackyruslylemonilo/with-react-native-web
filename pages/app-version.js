@@ -29,7 +29,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         ] = firstSegmentUserAgent.split('/');
         const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
 
-        const minVersion = transformAppVersionToNumber('0.170.24');
+        const minVersion = transformAppVersionToNumber('0.170.25');
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersion) {
