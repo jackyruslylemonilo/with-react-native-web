@@ -35,7 +35,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         if (currentVersion < minVersion) {
           if (platform === 'android') {
             window.open('lemonilo://cart');
-            
+
             window.location.href =
               'https://play.google.com/store/apps/details?id=com.lemonilo'
             
@@ -55,7 +55,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent]);
 
-  return <div />;
+  return <div>{userAgent}</div>;
 };
 
 AnniversaryGamePage.getInitialProps = async (ctx) => {
