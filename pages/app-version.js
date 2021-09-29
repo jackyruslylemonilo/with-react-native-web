@@ -29,7 +29,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         const [firstSegmentUserAgent] = userAgent.split(';');
         const [
           _appName,
-          platform,
+          _platform,
           appBuildVersion,
         ] = firstSegmentUserAgent.split('/');
         const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
@@ -57,8 +57,8 @@ const AnniversaryGamePage = ({ userAgent }) => {
 {decodeURIComponent(urlCurrentVersion)}
 
   <button onClick={() => {
-    window.open(
-              'https://play.google.com/store/apps/details?id=com.lemonilo');
+    window.location.href =
+              'https://play.google.com/store/apps/details?id=com.lemonilo';
          
             // window.location.href = 
             //   'https://itunes.apple.com/us/app/lemonilo/id1450623533'
