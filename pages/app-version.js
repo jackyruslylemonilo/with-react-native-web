@@ -17,14 +17,11 @@ const transformAppVersionToNumber = (version) => {
 
 const AnniversaryGamePage = ({ userAgent }) => {
   useEffect(() => {
-    window.location = 'lemonilo://cart';
+    window.location.replace('lemonilo://cart')
   }, [userAgent]);
 
-  return <div>{userAgent} v1.0.3
-  
-  <button onClick={() => {
-    window.open('lemonilo://cart');
-  }}>Test open</button></div>;
+  return <div>{userAgent} v1.0.4
+</div>;
 };
 
 AnniversaryGamePage.getInitialProps = async (ctx) => {
