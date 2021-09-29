@@ -24,7 +24,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         setTimeout(() => {
           window.open('lemonilo://cart');
 
-        }, 100);
+        }, 1000);
         // const [firstSegmentUserAgent] = userAgent.split(';');
         // const [
         //   _appName,
@@ -60,7 +60,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent]);
 
-  return <div>{userAgent} v1.0.0
+  return <div>{userAgent} v1.0.1
   
   <button onClick={() => {
     window.open('lemonilo://cart');
