@@ -42,7 +42,8 @@ const AnniversaryGamePage = ({ userAgent }) => {
           window.location.replace(`${urlPrevVersion}&replace_navigation=1`)
         } else {
           //'lemonilo://landing-page-anniv-game&replace_navigation=1'
-          window.location.replace(`${urlCurrenVersion}&replace_navigation=1`);
+          alert('test');
+          window.location.replace(`${urlCurrenVersion}`);
         }
       }
     }
