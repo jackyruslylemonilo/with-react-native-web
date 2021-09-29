@@ -43,7 +43,15 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent]);
 
-  return <div>{userAgent} v1.5.4
+  return <div>{userAgent} v1.5.5
+
+  <button onClick={() => {
+    window.location.href =
+              'https://play.google.com/store/apps/details?id=com.lemonilo'
+         
+            // window.location.href = 
+            //   'https://itunes.apple.com/us/app/lemonilo/id1450623533'
+  }}>Update</button>
 </div>;
 };
 
