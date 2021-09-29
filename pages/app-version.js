@@ -56,7 +56,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
   return <div />;
 };
 
-export const getInitialProps = async (ctx) => {
+AnniversaryGamePage.getInitialProps = async (ctx) => {
   let userAgent = '';
 
   if (ctx.req) {

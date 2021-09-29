@@ -14,10 +14,10 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-MyApp.getInitialProps = () => {
-  return {
-    _app: true
-  };
-}
+// MyApp.getInitialProps = () => {
+//   return {
+//     _app: true
+//   };
+// }
 
 export default MyApp
