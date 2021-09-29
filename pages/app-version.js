@@ -33,7 +33,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersion) {
-          window.location.replace('https://www.lemonilo.com/p/wiranilo')
+          window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1')
         } else {
           window.location.replace('lemonilo://cart')
         }
@@ -43,7 +43,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent]);
 
-  return <div>{userAgent} v1.5.2
+  return <div>{userAgent} v1.5.3
 </div>;
 };
 
