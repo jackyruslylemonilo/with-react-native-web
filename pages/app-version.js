@@ -19,7 +19,7 @@ const transformAppVersionToNumber = (version) => {
 const AnniversaryGamePage = ({ userAgent }) => {
   const router = useRouter();
   const { query } = router;
-  const { minVersion } = query;
+  const { minVersion, urlPrevVersion, urlCurrentVersion } = query;
   const [firstSegmentUserAgent] = userAgent.split(';');
   const [
     _appName,
@@ -33,14 +33,20 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        const minVersionApp = transformAppVersionToNumber(minVersion);
-        const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
+        fetch('https://staging-api-rnd.lemonilo.com/v1/config/app-version-checker')
+          .then(response => {
+            const data = JSON.parse(response.data.value);
+            const { minVersion, urlCurrentVersion, urlPrevVersion } = data;
 
-        if (currentVersion < minVersionApp) {
-          window.location.replace(`lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1`)
-        } else {
-          window.location.replace(`lemonilo://landing-page-anniv-game?replace_navigation=1`);
-        }
+            const minVersionApp = transformAppVersionToNumber(minVersion);
+            const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
+    
+            if (currentVersion < minVersionApp) {
+              window.location.replace(urlPrevVersion)
+            } else {
+              window.location.replace(urlCurrentVersion);
+            }
+          });
       }
     }
 
