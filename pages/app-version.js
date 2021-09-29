@@ -21,7 +21,10 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        window.open('lemonilo://cart');
+        setTimeout(() => {
+          window.open('lemonilo://cart');
+
+        }, 100);
         // const [firstSegmentUserAgent] = userAgent.split(';');
         // const [
         //   _appName,
