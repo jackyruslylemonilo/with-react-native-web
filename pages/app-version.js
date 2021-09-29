@@ -62,7 +62,8 @@ const AnniversaryGamePage = ({ userAgent }) => {
     window.open(
               'market://details?id=com.lemonilo');
     } else {
-      window.open('itms-apps://itunes.apple.com/lemonilo/id1450623533')
+      window.open('https://apps.apple.com/us/app/lemonilo-healthy-living/id1450623533')
+      // window.open('itms-apps://itunes.apple.com/lemonilo-healthy-living/id1450623533')
     }
             
   }}>Update</button>
