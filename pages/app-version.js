@@ -1,3 +1,4 @@
+import { useRouter } from 'next/dist/client/router';
 import React, { useEffect } from 'react';
 
 const transformAppVersionToNumber = (version) => {
@@ -16,11 +17,15 @@ const transformAppVersionToNumber = (version) => {
 };
 
 const AnniversaryGamePage = ({ userAgent }) => {
+  const router = useRouter();
+  const { query } = router;
+
   useEffect(() => {
     async function init() {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
+        const { minVersion, urlPrevVersion, urlCurrenVersion } = query;
         const [firstSegmentUserAgent] = userAgent.split(';');
         const [
           _appName,
@@ -29,19 +34,21 @@ const AnniversaryGamePage = ({ userAgent }) => {
         ] = firstSegmentUserAgent.split('/');
         const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
 
-        const minVersion = transformAppVersionToNumber('0.170.24');
+        const minVersion = transformAppVersionToNumber(minVersion);
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersion) {
-          window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1')
+          //'lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1'
+          window.location.replace(urlPrevVersion)
         } else {
-          window.location.replace('lemonilo://cart')
+          //'lemonilo://landing-page-anniv-game&replace_navigation=1'
+          window.location.replace(urlCurrenVersion);
         }
       }
     }
 
     init();
-  }, [userAgent]);
+  }, [userAgent, query]);
 
   return <div>{userAgent} v1.5.5
 
