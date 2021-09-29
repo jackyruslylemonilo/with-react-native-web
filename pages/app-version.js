@@ -33,7 +33,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        const minVersionApp = transformAppVersionToNumber('0.170.24');
+        const minVersionApp = transformAppVersionToNumber('0.170.25');
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersionApp) {
