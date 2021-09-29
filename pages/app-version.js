@@ -17,10 +17,33 @@ const transformAppVersionToNumber = (version) => {
 
 const AnniversaryGamePage = ({ userAgent }) => {
   useEffect(() => {
-    window.location.replace('lemonilo://cart')
+    async function init() {
+      if (userAgent.indexOf('lemonilo/') !== 0) {
+        window.location.replace('/');
+      } else {
+        const [firstSegmentUserAgent] = userAgent.split(';');
+        const [
+          _appName,
+          platform,
+          appBuildVersion,
+        ] = firstSegmentUserAgent.split('/');
+        const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
+
+        const minVersion = transformAppVersionToNumber('1.15.0');
+        const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
+
+        if (currentVersion < minVersion) {
+          window.location.replace('https://www.lemonilo.com/p/')
+        } else {
+          window.location.replace('lemonilo://anniv/jadi-hebat-match&replace_navigation=1')
+        }
+      }
+    }
+
+    init();
   }, [userAgent]);
 
-  return <div>{userAgent} v1.0.4
+  return <div>{userAgent} v1.5.0
 </div>;
 };
 
