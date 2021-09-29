@@ -30,7 +30,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
 
         const minVersion = transformAppVersionToNumber('1.15.0');
-        const currentVersion = transformAppVersionToNumber(appVersion);
+        const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersion) {
           if (platform === 'android') {
