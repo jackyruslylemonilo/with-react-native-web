@@ -33,20 +33,20 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        fetch('https://staging-api-rnd.lemonilo.com/v1/config/app-version-checker')
-          .then(response => {
-            const data = JSON.parse(response.data.value);
-            const { minVersion, urlCurrentVersion, urlPrevVersion } = data;
+        const response = await fetch('https://staging-api-rnd.lemonilo.com/v1/config/app-version-checker')
+        const json = await response.json();
 
-            const minVersionApp = transformAppVersionToNumber(minVersion);
-            const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
-    
-            if (currentVersion < minVersionApp) {
-              window.location.replace(urlPrevVersion)
-            } else {
-              window.location.replace(urlCurrentVersion);
-            }
-          });
+        const data = JSON.parse(json.data.value);
+        const { minVersion, urlCurrentVersion, urlPrevVersion } = data;
+
+        const minVersionApp = transformAppVersionToNumber(minVersion);
+        const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
+
+        if (currentVersion < minVersionApp) {
+          window.location.replace(urlPrevVersion)
+        } else {
+          window.location.replace(urlCurrentVersion);
+        }
       }
     }
 
