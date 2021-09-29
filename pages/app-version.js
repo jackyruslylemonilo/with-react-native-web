@@ -19,6 +19,7 @@ const transformAppVersionToNumber = (version) => {
 const AnniversaryGamePage = ({ userAgent }) => {
   const router = useRouter();
   const { query } = router;
+  const { minVersion, urlPrevVersion, urlCurrenVersion } = query;
 
   useEffect(() => {
     async function init() {
