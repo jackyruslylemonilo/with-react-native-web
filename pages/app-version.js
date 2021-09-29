@@ -51,7 +51,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent, query]);
 
-  return <div>{userAgent} v1.5.5
+  return <div>{userAgent} v1.5.6
 
 {minVersion}<br />
 {urlPrevVersion} <br />
