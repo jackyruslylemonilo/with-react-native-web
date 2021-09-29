@@ -33,29 +33,13 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        // if (_platform === 'ios') {
-        //   return window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
-        // }
-
-        const minVersionApp = transformAppVersionToNumber(minVersion);
+        const minVersionApp = transformAppVersionToNumber('0.170.22');
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
-      
-        
         if (currentVersion < minVersionApp) {
-          //'lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1'
-          // if (_platform === 'ios') {
-          //   window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
-          // } else {
-            window.location.replace(`${urlPrevVersion}${urlPrevVersion.includes('?') ? '&' : '?'}replace_navigation=1`)
-          // }
+          window.location.replace(`lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1`)
         } else {
-          //'lemonilo://landing-page-anniv-game?replace_navigation=1'
-          // if (_platform === 'ios') {
-          //   window.location.replace('lemonilo://cart?replace_navigation=1');
-          // } else {
-            window.location.replace(`${urlCurrentVersion}${urlCurrentVersion.includes('?') ? '&' : '?'}replace_navigation=1`);
-          // }
+          window.location.replace(`lemonilo://landing-page-anniv-game?replace_navigation=1`);
         }
       }
     }
@@ -64,7 +48,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
   }, [userAgent, query]);
 
   return <div>{userAgent} v1.5.7
-
+<br />
 {minVersion}<br />
 {decodeURIComponent(urlPrevVersion)} <br />
 {decodeURIComponent(urlCurrentVersion)}
