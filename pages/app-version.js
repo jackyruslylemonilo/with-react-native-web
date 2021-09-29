@@ -19,7 +19,7 @@ const transformAppVersionToNumber = (version) => {
 const AnniversaryGamePage = ({ userAgent }) => {
   const router = useRouter();
   const { query } = router;
-  const { minVersion, urlPrevVersion, urlCurrenVersion } = query;
+  const { minVersion, urlPrevVersion, urlCurrentVersion } = query;
 
   useEffect(() => {
     async function init() {
@@ -43,7 +43,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         } else {
           //'lemonilo://landing-page-anniv-game&replace_navigation=1'
           alert('test');
-          window.location.replace(`${urlCurrenVersion}`);
+          window.location.replace(`${urlCurrentVersion}`);
         }
       }
     }
@@ -54,12 +54,8 @@ const AnniversaryGamePage = ({ userAgent }) => {
   return <div>{userAgent} v1.5.7
 
 {minVersion}<br />
-{urlPrevVersion} <br />
-{urlCurrenVersion}<br />
-
-{minVersion}<br />
 {decodeURIComponent(urlPrevVersion)} <br />
-{decodeURIComponent(urlCurrenVersion)}
+{decodeURIComponent(urlCurrentVersion)}
 
   <button onClick={() => {
     window.open(
