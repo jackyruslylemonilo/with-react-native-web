@@ -32,15 +32,17 @@ const AnniversaryGamePage = ({ userAgent }) => {
         const minVersion = transformAppVersionToNumber('1.15.0');
         const currentVersion = transformAppVersionToNumber(appVersion);
 
-        if (minVersion < currentVersion) {
+        if (currentVersion < minVersion) {
           if (platform === 'android') {
+            window.open('lemonilo://cart');
+            
             window.location.href =
               'https://play.google.com/store/apps/details?id=com.lemonilo'
             
           } else {
             window.location.href = 
               'https://itunes.apple.com/us/app/lemonilo/id1450623533'
-            
+              window.open('lemonilo://cart');
           }
         } else {
           window.open('lemonilo://cart');
