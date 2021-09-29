@@ -33,7 +33,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersion) {
-          window.location.replace('https://www.lemonilo.com/p/')
+          window.location.replace('https://www.lemonilo.com/p/wiranilo')
         } else {
           window.location.replace('lemonilo://anniv/jadi-hebat-match&replace_navigation=1')
         }
@@ -43,7 +43,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent]);
 
-  return <div>{userAgent} v1.5.0
+  return <div>{userAgent} v1.5.1
 </div>;
 };
 
