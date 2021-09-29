@@ -34,7 +34,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         window.location.replace('/');
       } else {
         if (_platform === 'ios') {
-          return indow.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
+          return window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
         }
 
         const minVersionApp = transformAppVersionToNumber(minVersion);
