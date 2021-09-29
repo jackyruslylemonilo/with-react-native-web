@@ -36,13 +36,14 @@ const AnniversaryGamePage = ({ userAgent }) => {
           if (platform === 'android') {
             window.open('lemonilo://cart');
 
-            window.location.href =
-              'https://play.google.com/store/apps/details?id=com.lemonilo'
+            // window.location.href =
+            //   'https://play.google.com/store/apps/details?id=com.lemonilo'
             
           } else {
-            window.location.href = 
-              'https://itunes.apple.com/us/app/lemonilo/id1450623533'
-              window.open('lemonilo://cart');
+            // window.location.href = 
+            //   'https://itunes.apple.com/us/app/lemonilo/id1450623533'
+            //   window.open('lemonilo://cart');
+            window.open('lemonilo://cart');
           }
         } else {
           window.open('lemonilo://cart');
