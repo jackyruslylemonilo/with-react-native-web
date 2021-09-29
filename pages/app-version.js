@@ -21,42 +21,43 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        const [firstSegmentUserAgent] = userAgent.split(';');
-        const [
-          _appName,
-          platform,
-          appBuildVersion,
-        ] = firstSegmentUserAgent.split('/');
-        const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
+        window.open('lemonilo://cart');
+        // const [firstSegmentUserAgent] = userAgent.split(';');
+        // const [
+        //   _appName,
+        //   platform,
+        //   appBuildVersion,
+        // ] = firstSegmentUserAgent.split('/');
+        // const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
 
-        const minVersion = transformAppVersionToNumber('1.15.0');
-        const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
+        // const minVersion = transformAppVersionToNumber('1.15.0');
+        // const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
-        if (currentVersion < minVersion) {
-          if (platform === 'android') {
-            window.open('lemonilo://cart');
+        // if (currentVersion < minVersion) {
+        //   if (platform === 'android') {
+        //     window.open('lemonilo://cart');
 
-            // window.location.href =
-            //   'https://play.google.com/store/apps/details?id=com.lemonilo'
+        //     // window.location.href =
+        //     //   'https://play.google.com/store/apps/details?id=com.lemonilo'
             
-          } else {
-            // window.location.href = 
-            //   'https://itunes.apple.com/us/app/lemonilo/id1450623533'
-            //   window.open('lemonilo://cart');
-            window.open('lemonilo://cart');
-          }
-        } else {
-          window.open('lemonilo://cart');
-        }
+        //   } else {
+        //     // window.location.href = 
+        //     //   'https://itunes.apple.com/us/app/lemonilo/id1450623533'
+        //     //   window.open('lemonilo://cart');
+        //     window.open('lemonilo://cart');
+        //   }
+        // } else {
+        //   window.open('lemonilo://cart');
+        // }
 
-        console.log(minVersion, currentVersion);
+        // console.log(minVersion, currentVersion);
       }
     }
 
     init();
   }, [userAgent]);
 
-  return <div>{userAgent}
+  return <div>{userAgent} v1.0.0
   
   <button onClick={() => {
     window.open('lemonilo://cart');
