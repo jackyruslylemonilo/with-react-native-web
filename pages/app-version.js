@@ -33,13 +33,13 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        const minVersionApp = transformAppVersionToNumber('0.170.22');
+        const minVersionApp = transformAppVersionToNumber('0.170.24');
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersionApp) {
-          window.location.replace(`lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo`)
+          window.location.replace(`lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1`)
         } else {
-          window.location.replace(`lemonilo://landing-page-anniv-game`);
+          window.location.replace(`lemonilo://landing-page-anniv-game?replace_navigation=1`);
         }
       }
     }
@@ -50,8 +50,8 @@ const AnniversaryGamePage = ({ userAgent }) => {
   return <div>{userAgent} v1.5.7
 <br />
 {appVersion}<br />
-{/* {decodeURIComponent(urlPrevVersion)} <br /> */}
-{/* {decodeURIComponent(urlCurrentVersion)} */}
+{/* {decodeURIComponent(urlPrevVersion)} <br />
+{decodeURIComponent(urlCurrentVersion)} */}
 
   <button onClick={() => {
     if (_platform === 'android') {
