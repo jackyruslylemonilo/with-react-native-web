@@ -55,7 +55,11 @@ const AnniversaryGamePage = ({ userAgent }) => {
     init();
   }, [userAgent]);
 
-  return <div>{userAgent}</div>;
+  return <div>{userAgent}
+  
+  <button onClick={() => {
+    window.open('lemonilo://cart');
+  }}>Test open</button></div>;
 };
 
 AnniversaryGamePage.getInitialProps = async (ctx) => {
