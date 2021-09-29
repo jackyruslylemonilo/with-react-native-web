@@ -26,7 +26,6 @@ const AnniversaryGamePage = ({ userAgent }) => {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        const { minVersion, urlPrevVersion, urlCurrenVersion } = query;
         const [firstSegmentUserAgent] = userAgent.split(';');
         const [
           _appName,
@@ -49,7 +48,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
     }
 
     init();
-  }, [userAgent, query]);
+  }, [userAgent, router]);
 
   return <div>{userAgent} v1.5.7
 
