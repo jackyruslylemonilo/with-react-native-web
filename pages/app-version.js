@@ -79,6 +79,12 @@ const AnniversaryGamePage = ({ userAgent }) => {
     }
             
   }}>Update</button>
+
+  <button onClick={() => {
+    window.open('lemonilo://cart');
+  }}>
+    Cart
+  </button>
 </div>;
 };
 
