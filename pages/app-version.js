@@ -20,19 +20,20 @@ const AnniversaryGamePage = ({ userAgent }) => {
   const router = useRouter();
   const { query } = router;
   const { minVersion, urlPrevVersion, urlCurrentVersion } = query;
+  const [firstSegmentUserAgent] = userAgent.split(';');
+  const [
+    _appName,
+    _platform,
+    appBuildVersion,
+  ] = firstSegmentUserAgent.split('/');
+  const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
 
   useEffect(() => {
     async function init() {
       if (userAgent.indexOf('lemonilo/') !== 0) {
         window.location.replace('/');
       } else {
-        const [firstSegmentUserAgent] = userAgent.split(';');
-        const [
-          _appName,
-          _platform,
-          appBuildVersion,
-        ] = firstSegmentUserAgent.split('/');
-        const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
+        
 
         const minVersionApp = transformAppVersionToNumber(minVersion);
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
@@ -57,11 +58,12 @@ const AnniversaryGamePage = ({ userAgent }) => {
 {decodeURIComponent(urlCurrentVersion)}
 
   <button onClick={() => {
+    if (_platform === 'android') {
     window.open(
               'market://details?id=com.lemonilo');
-         
-            // window.location.href = 
-            //   'https://itunes.apple.com/us/app/lemonilo/id1450623533'
+    } else {
+      window.open('itms-apps://itunes.apple.com/lemonilo/id1450623533')
+    }
             
   }}>Update</button>
 </div>;
