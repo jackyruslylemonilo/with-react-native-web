@@ -29,11 +29,11 @@ const AnniversaryGamePage = ({ userAgent }) => {
         ] = firstSegmentUserAgent.split('/');
         const [_appBuildNumber, appVersion] = appBuildVersion?.split(' - ');
 
-        const minVersion = transformAppVersionToNumber('0.170.25');
+        const minVersion = transformAppVersionToNumber('0.170.24');
         const currentVersion = transformAppVersionToNumber(appVersion.replace('v', ''));
 
         if (currentVersion < minVersion) {
-          window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo')
+          window.location.replace('lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1')
         } else {
           window.location.replace('lemonilo://cart')
         }
