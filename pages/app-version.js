@@ -35,7 +35,7 @@ const AnniversaryGamePage = ({ userAgent }) => {
         if (currentVersion < minVersion) {
           window.location.replace('https://www.lemonilo.com/p/wiranilo')
         } else {
-          window.location.replace('lemonilo://anniv/jadi-hebat-match&replace_navigation=1')
+          window.location.replace('lemonilo://cart')
         }
       }
     }
