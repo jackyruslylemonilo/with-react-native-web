@@ -40,10 +40,18 @@ const AnniversaryGamePage = ({ userAgent }) => {
 
         if (currentVersion < minVersionApp) {
           //'lemonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1'
-          window.location.replace(`${urlPrevVersion}${urlPrevVersion.includes('?') ? '&' : '?'}replace_navigation=1`)
+          if (_platform === 'ios') {
+            window.location.replace('emonilo://webview?url=https://www.lemonilo.com/p/wiranilo&replace_navigation=1');
+          } else {
+            window.location.replace(`${urlPrevVersion}${urlPrevVersion.includes('?') ? '&' : '?'}replace_navigation=1`)
+          }
         } else {
           //'lemonilo://landing-page-anniv-game?replace_navigation=1'
-          window.location.replace(`${urlCurrentVersion}${urlCurrentVersion.includes('?') ? '&' : '?'}replace_navigation=1`);
+          if (_platform === 'ios') {
+            window.location.replace('lemonilo://cart?replace_navigation=1');
+          } else {
+            window.location.replace(`${urlCurrentVersion}${urlCurrentVersion.includes('?') ? '&' : '?'}replace_navigation=1`);
+          }
         }
       }
     }
