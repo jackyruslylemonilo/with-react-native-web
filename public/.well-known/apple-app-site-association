@@ -4,7 +4,10 @@
         "details": [
             {
                 "appID": "GHA9QQZ7Q6.com.lemonilo",
-                "paths": [ "*" ]
+                "paths": [
+                  "/",
+                  "/testing"
+                ]
             }
         ]
     }
